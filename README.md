@@ -74,5 +74,3 @@ This project investigates process modeling and implementation for robotic arms a
 * Students will gain practical skills in process modeling through manual implementation and flowchart creation.
 * The abstraction and parameterization phase teaches students to look beyond the specific context of a single process and identify generalizable patterns.
 * Integration with Node-RED, along with its associated documentation and troubleshooting, prepares students for challenges encountered in real-world projects, fostering critical thinking and problem-solving skills.
-# projektarbeit1
-Projektarbeit 1, David Senn, Kai Aebli
