@@ -4,21 +4,23 @@ Repository for the Project work 1 of the Digital Labs and Production track of th
 
 **Beschreibung:**
 
-Roboterarme und andere Aktuatoren spielen eine wichtige Rolle in der Automatisierung von Prozessen in Laboren und Produktionsanlagen. In diesem Projekt wird die Prozessmodellierung und Implementierung eines solchen Prozesses unter Verwendung von Blockly, Python und Node-RED untersucht.
+Roboterarme und andere Aktuatoren spielen eine grosse Rolle in der Automatisierung von Prozessen in Labors und Produktionsanlagen. Beispiele für solche Geräte stehen im Departement in Form von Dobot Magicians bereit. Der Dobot Magician ist ein 4-Achs-Roboterarm, der sich für verschiedene Aufgaben im Laborkontext eignen. Solche Roboterarme und andere Aktuatoren arbeiten oft in strikt definierten Prozessen zusammen, wobei der Prozessablauf je nach Kontext auf gewisse äussere Signale oder Gegebenheiten Rücksicht nimmt. Die semi-formale Modellierung solcher Prozesse spielt in der Digitalisierung und Automatisierung von Laboren und Produktionsanlagen eine wichtige Rolle. 
+Die Roboterarme lassen sich über die sog. "No-Code"-Umgebungen Node-Red und Blockly programmieren. In einer "No-Code"-Umgebungen werden Funktionale Blöcke in einer grafischen Oberfläche arrangiert.
 
 **Auftrag:**
 
-1. **Literaturrecherche:** Recherche zu Prozessmodellierung mit Blockly und Node-RED.
-2. **Manuelle Implementierung:** Skizzieren des Prozessablaufs.
-3. **Prozessfliessbild:** Erstellen eines detaillierten Prozessfliessbilds mit BPMN.
-4. **Abstraktion und Parametrisierung:** Identifizieren wiederkehrender Muster und Abstrahieren dieser.
-5. **Implementierung mit Blockly und Python:** Implementierung des Prozesses mit Blockly und Python.
-6. **Ausführung mit Node-RED:** Integration des Prozesses in Node-RED und Ausführung.
+Das Projekt analysiert verschiedene Ansätze zur "No-Code"-Programmierung für die Dobot-Roboter in der Anwendung. Das Projekt untersucht Ähnlichkeiten und Unterschiede der verschiedenen Ansätze und wie die verschiedenen Konzepte zwischen den Ansätzen übersetzt werden. 
+1.	**Literaturrecherche:** Recherchieren Sie geeignete Literaturquellen zum Thema Prozessmodellierung mit Blockly und Node-RED. Beschreiben Sie die wesentlichen Erkenntnisse und Methoden, die in der Literatur vorgestellt werden.
+2.	**Manuelle Implementierung:** Skizzieren Sie den Prozessablauf von Hand, um ein grundlegendes Verständnis des Prozesses zu erlangen.
+3.	**Erstellung eines Prozessfliessbildes:** Verwenden Sie BPMN (Business Process Model and Notation), um ein detailliertes Prozessfliessbild des skizzierten Ablaufs zu erstellen.
+4.	**Abstraktion und Parametrisierung:** Analysieren Sie den erstellten Prozess, identifizieren Sie wiederkehrende Muster und abstrahieren Sie diese. Parametrieren Sie den Prozess entsprechend, um Flexibilität und Wiederverwendbarkeit zu gewährleisten.
+5.	**Implementierung mit Blockly und Python:** Nutzen Sie das Blockly-Tool der Dobots, um den Prozess unter Verwendung von Python zu implementieren.
+6.	**Ausführung mit Node-RED:** Integrieren Sie den mit Blockly erstellten Prozess in Node-RED und führen Sie diesen aus. Dokumentieren Sie alle erforderlichen Schritte und beachten Sie mögliche Integrationsprobleme.
 
 **Resultate:**
 
-* Report mit Dokumentation des Entwicklungsprozesses, der gewonnenen Erkenntnisse und der implementierten Lösungen.
-* Berücksichtigung von Herausforderungen und Problemlösungsstrategien.
+* Erstellen Sie einen Report, in dem Sie den gesamten Entwicklungsprozess und die daraus gewonnenen Erkenntnisse sowie die implementierten Lösungen dokumentieren. Berücksichtigen Sie dabei auch mögliche Herausforderungen und Problemlösungsstrategien.
+
 
 **Abgrenzung:**
 
@@ -42,7 +44,7 @@ Roboterarme und andere Aktuatoren spielen eine wichtige Rolle in der Automatisie
 
 **Description:**
 
-This project investigates process modeling and implementation for robotic arms and other actuators used in laboratory and production line automation. The focus is on using Blockly, Python, and Node-RED for process development.
+Robot arms and other actuators play an important role in the automation of processes in laboratories and production plants. Examples of such devices are available in the department in the form of Dobot Magicians. The Dobot Magician is a 4-axis robot arm that is suitable for various tasks in the laboratory context. Such robot arms and other actuators often work together in strictly defined processes, whereby the process flow takes into account certain external signals or conditions depending on the context. The semi-formal modeling of such processes plays an important role in the digitization and automation of laboratories and production plants. The robot arms can be programmed using the so-called "no-code" environments Node-Red and Blockly. In a "no-code" environment, functional blocks are arranged in a graphical interface.
 
 **Tasks:**
 
