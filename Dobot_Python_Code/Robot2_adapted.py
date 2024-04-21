@@ -49,7 +49,7 @@ on_conveyor_belt = [above_conveyor_belt[0],
 bot.move_to_Joint(first_block_above[0], first_block_above[1], first_block_above[2]) # Move above the first block
 bot.move_to_Joint(first_block_pick[0], first_block_pick[1], first_block_pick[2]) # Pick the first block
 bot.suction_cup.suck()
-time.sleep(0.5)
+sleep(0.5)
 bot.move_to_Joint(first_block_above[0], first_block_above[1], first_block_above[2]) # Lift the first block
 bot.move_to_Joint(above_conveyor_belt[0],above_conveyor_belt[1],above_conveyor_belt[2])
 bot.move_to_Joint(on_conveyor_belt[0],on_conveyor_belt[1],on_conveyor_belt[2])
@@ -64,7 +64,7 @@ bot.conveyor_belt.idle() # Stop the conveyor belt
 bot.move_to_Joint(second_block_above[0], second_block_above[1], second_block_above[2])
 bot.move_to_Joint(second_block_pick[0], second_block_pick[1], second_block_pick[2])
 bot.suction_cup.suck()
-time.sleep(0.5)
+sleep(0.5)
 bot.move_to_Joint(second_block_above[0], second_block_above[1], second_block_above[2])
 bot.move_to_Joint(above_conveyor_belt[0],above_conveyor_belt[1],above_conveyor_belt[2])
 bot.move_to_Joint(on_conveyor_belt[0],on_conveyor_belt[1],on_conveyor_belt[2])
@@ -79,7 +79,7 @@ bot.conveyor_belt.idle() # Stop the conveyor belt
 bot.move_to_Joint(third_block_above[0], third_block_above[1], third_block_above[2])
 bot.move_to_Joint(third_block_pick[0], third_block_pick[1], third_block_pick[2])
 bot.suction_cup.suck()
-time.sleep(0.5)
+sleep(0.5)
 bot.move_to_Joint(third_block_above[0], third_block_above[1], third_block_above[2])
 bot.move_to_Joint(above_conveyor_belt[0],above_conveyor_belt[1],above_conveyor_belt[2])
 bot.move_to_Joint(on_conveyor_belt[0],on_conveyor_belt[1],on_conveyor_belt[2])
@@ -94,7 +94,7 @@ bot.conveyor_belt.idle() # Stop the conveyor belt
 bot.move_to_Joint(fourth_block_above[0], fourth_block_above[1], fourth_block_above[2])
 bot.move_to_Joint(fourth_block_pick[0], fourth_block_pick[1], fourth_block_pick[2])
 bot.suction_cup.suck()
-time.sleep(0.5)
+sleep(0.5)
 bot.move_to_Joint(fourth_block_above[0], fourth_block_above[1], fourth_block_above[2])
 bot.move_to_Joint(above_conveyor_belt[0],above_conveyor_belt[1],above_conveyor_belt[2])
 bot.move_to_Joint(on_conveyor_belt[0],on_conveyor_belt[1],on_conveyor_belt[2])
