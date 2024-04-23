@@ -1,8 +1,23 @@
 import os
-from datetime import datetime
+import sys
 from time import sleep
 from dobotapi import Dobot
 from dobotapi.utils import get_coms_port
+
+# Define starting positions
+start_position = [239.9078, 14.9822, 118.0104]
+block_above = [259.8147, -2.6575, 60]
+block_pick = [259.8147, -2.6575, 13]
+
+bot2 = Dobot()
+bot3 = Dobot()
+# In case of multipe Dobots connected to one device choose the port to adress once specific Dobot
+bot2.port = get_coms_port()[0]
+bot3.port = get_coms_port()[1]
+bot2.connect()
+bot3.connect()
+bot2.clear_alarms()
+bot3.clear_alarms()
 
 # Function to move a block to a specified location
 def move_block_to_location(bot3, from_pos, to_pos, above_pos):
@@ -13,27 +28,6 @@ def move_block_to_location(bot3, from_pos, to_pos, above_pos):
     bot3.move_to_Joint(*to_pos)
     bot3.suction_cup.idle()
     bot3.move_to_Joint(*above_pos)
-
-# Create a new folder with a timestamp for this run
-run_folder = datetime.now().strftime("run_%Y-%m-%d_%H-%M-%S")
-os.makedirs(run_folder, exist_ok=True)
-
-# Path to the counter file
-counter_file_path = os.path.join(run_folder, "color_counters.txt")
-
-# Initialize the Dobot and connect
-bot3 = Dobot()
-bot3.port = get_coms_port()[0]
-bot3.connect()
-bot3.clear_alarms()
-
-# Read existing counters from the file, if it exists
-color_counters = {"yellow": 0, "red": 0, "green": 0, "blue": 0}
-if os.path.isfile(counter_file_path):
-    with open(counter_file_path, "r") as f:
-        for line in f:
-            color, count = line.strip().split(":")
-            color_counters[color] = int(count)
 
 # Define starting positions
 start_position = [239.9078, 14.9822, 118.0104]
@@ -72,35 +66,28 @@ drop_off_positions = {
     },
 }
 
-# Move the block from the conveyor belt to the color sensor
-bot3.move_to_Joint(*start_position)
-bot3.move_to_Joint(*block_above)
-bot3.move_to_Joint(*block_pick)
-bot3.suction_cup.suck()
-sleep(0.5)
-bot3.move_to_Joint(*block_above)
-bot3.move_to_Joint(*color_sensor_above)
-bot3.move_to_Joint(*color_sensor_on)
-bot3.suction_cup.idle()
-bot3.move_to_Joint(*color_sensor_above)
 
-sleep(2)  # wait for the color sensor to detect the color
-color = check_color()  # Assuming a function to get the detected color
+bot2.ir_toggle()  # Enable IR sensor
+while True:
+    if bot2.get_ir() == False:
+        bot2.conveyor_belt.move(speed=-0.5)  # Move the conveyor belt
 
-# Determine drop-off location based on the block's color
-color_counters[color] += 1
-drop_off_above, drop_off_on = drop_off_positions[color][color_counters[color]]
+    elif bot2.get_ir() == True:
+        bot2.conveyor_belt.idle()  # Stop the conveyor belt
+        bot3.move_to_Joint(*start_position)
+        bot3.move_to_Joint(*block_above)
+        bot3.move_to_Joint(*block_pick)
+        bot3.suction_cup.suck()
+        sleep(0.5)
+        bot3.move_to_Joint(*block_above)
+        bot3.move_to_Joint(*color_sensor_above)
+        bot3.move_to_Joint(*color_sensor_on)
+        bot3.suction_cup.idle()
+        bot3.move_to_Joint(*color_sensor_above)
 
-# Move to the appropriate drop-off location and release the block
-move_block_to_location(bot3, color_sensor_on, drop_off_on, drop_off_above)
+        sleep(2)
+        break  # Exit the loop after processing a block
 
-# Return to the starting position
-bot3.move_to_Joint(*start_position)
-
-# Save the updated color counters to the file
-with open(counter_file_path, "w") as f:
-    for color, count in color_counters.items():
-        f.write(f"{color}:{count}\n")
-
-# Disconnect the Dobot
-bot3.disconnect()
+bot2.ir_toggle()  # Reset IR sensor
+bot2.close()  # Properly close the connection
+bot3.close()  # Properly close the connection
