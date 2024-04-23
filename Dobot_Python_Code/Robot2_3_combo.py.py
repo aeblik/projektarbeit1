@@ -4,6 +4,7 @@ from dobotapi import Dobot
 from dobotapi.utils import get_coms_port
 from time import sleep, time  # Importing 'time' for timing operations
 
+
 # Define starting positions
 start_position = [239.9078, 14.9822, 118.0104]
 block_above = [259.8147, -2.6575, 60]
@@ -48,6 +49,12 @@ while True:
         sleep(2)
         break  # Exit the loop after processing a block
 
-bot2.ir_toggle()  # Reset IR sensor
+# Reset the IR sensor, stop the conveyor belt, and turn off the suction cups
+bot2.ir_toggle()
+bot2.conveyor_belt.idle()
+bot2.suction_cup.idle()
+bot3.suction_cup.idle()
+
+# Properly close the connections to the Dobot devices
 bot2.close()  # Properly close the connection
 bot3.close()  # Properly close the connection
