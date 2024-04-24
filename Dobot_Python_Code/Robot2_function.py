@@ -40,10 +40,10 @@ bot.clear_alarms()
 
 # Define the coordinates for positions directly above each block
 blocks_above = [
-    [13.8287, -267.374, 90],
-    [49.325, -270.2565, 90],
-    [49.3254, -300.8365, 90],
-    [14.4295, -300.84, 90]
+    [13.8287, -270.8062, 90], # Block 1
+    [53.1174, -268.0737, 90], # Block 2
+    [53.3576, -299.855, 90], # Block 3
+    [18.1257, -300.1451, 90] # Block 4
 ]
 # Define the Z-coordinates for picking up each block
 pick_z_coords = [15.4, 13.4, 12.4, 12.4]
@@ -52,8 +52,8 @@ blocks_pick = [[x, y, z_pick] for (x, y, _), z_pick in zip(blocks_above, pick_z_
 
 # Define conveyor positions in a dictionary to be passed as parameters
 conveyor_positions = {
-    'above': [174.7025, -212.0127, 90],  # Position above the conveyor belt
-    'on': [174.7025, -212.0127, 13.4273]  # Exact position on the conveyor belt
+    'above': [174.7025, -184.3191, 90],  # Position above the conveyor belt
+    'on': [174.7025, -184.3191, 13.4273]  # Exact position on the conveyor belt
 }
 
 # Iterate over each block to perform the picking and placing operations
