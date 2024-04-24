@@ -46,7 +46,7 @@ blocks_above = [
     [18.1257, -300.1451, 90] # Block 4
 ]
 # Define the Z-coordinates for picking up each block
-pick_z_coords = [15.4, 13.4, 12.4, 12.4]
+pick_z_coords = [14.4, 13.4, 12.4, 12.4]
 # Calculate the full picking coordinates for each block using the above coordinates and the specific Z-coordinates
 blocks_pick = [[x, y, z_pick] for (x, y, _), z_pick in zip(blocks_above, pick_z_coords)]
 
