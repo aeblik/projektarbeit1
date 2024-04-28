@@ -83,7 +83,7 @@ def attach_fork_to_gripper(bot):
 def detach_fork_from_gripper(bot):
     move_to(bot, gripper_positions['lift'])
     move_to(bot, gripper_positions['pick'])
-    bot.grip(enable(True))  # Open gripper
+    bot.grip(enable=True)  # Open gripper
     move_to(bot, gripper_positions['above'])
 
 # Attach the gripper to the claw and lift it

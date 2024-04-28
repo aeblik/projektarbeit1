@@ -77,12 +77,8 @@ def detach_fork_from_gripper(bot):
     bot.gripper.open()
     move_to(bot, gripper_positions['above'])
 
-# Open the gripper and lift the fork
-bot.gripper.open()
-move_to(bot, gripper_positions['above'])
-move_to(bot, gripper_positions['pick'])
-bot.gripper.close()
-move_to(bot, gripper_positions['lift'])
+# Attach the fork to the gripper
+attach_fork_to_gripper(bot)
 
 ###### Palette 1 ######
 # Move pallet 1 to the loading area and return the empty pallet to storage
