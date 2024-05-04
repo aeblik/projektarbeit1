@@ -1,0 +1,11 @@
+[Unit]
+Description=MQTT Client for Robot 1
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/clt-lab-n-1282/Desktop/PA1_DavidSenn_KaiAebli/Environment/mqtt_r2_con.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
