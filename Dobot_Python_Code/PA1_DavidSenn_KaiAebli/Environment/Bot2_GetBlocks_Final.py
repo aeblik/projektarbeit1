@@ -40,13 +40,13 @@ bot.clear_alarms()
 
 # Define the coordinates for positions directly above each block
 blocks_above = [
-    [18.8287, -270.8062, 85], # Block 1
-    [53.1174, -268.0737, 85], # Block 2
-    [53.3576, -299.855, 85], # Block 3
-    [18.1257, -300.1451, 85] # Block 4
+    [13.8287, -270.8062, 85], # Block 1
+    [49.0, -268.0737, 85], # Block 2
+    [50.7896, -299.855, 85], # Block 3
+    [15.3175, -300.1451, 85] # Block 4
 ]
 # Define the Z-coordinates for picking up each block
-pick_z_coords = [14.4, 13.4, 12.4, 12.4]
+pick_z_coords = [11, 9, 9, 11]
 # Calculate the full picking coordinates for each block using the above coordinates and the specific Z-coordinates
 blocks_pick = [[x, y, z_pick] for (x, y, _), z_pick in zip(blocks_above, pick_z_coords)]
 
