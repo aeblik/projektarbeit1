@@ -2,7 +2,7 @@ from dobotapi import Dobot
 from dobotapi.utils import get_coms_port
 
 # Define the x, y, z, r coordinates for various positions
-home_position = (200.0, 0.0, 80.0, 25.0)
+home_position = (200.0, 200.0, 80.0, 25.0)
 
 gripper_positions = {
     'above': (116.3743, -194.0146, 7.5, 57.408),
