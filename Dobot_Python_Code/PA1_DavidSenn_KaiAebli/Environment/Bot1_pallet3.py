@@ -13,6 +13,6 @@ return_empty_pallet_to_storage(bot, '2')
 # Move pallet 3 to the loading area
 move_pallet_to_loading_area(bot, '3')
 
-detach_fork_from_gripper(bot)
+#detach_fork_from_gripper(bot)
 
 bot_cleanup(bot, home_position)
