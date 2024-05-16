@@ -1,0 +1,503 @@
+[
+    {
+        "id": "c34a7ab863264126",
+        "type": "tab",
+        "label": "PA1_Senn_Aebli",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6a4362871abcc5ba",
+        "type": "inject",
+        "z": "c34a7ab863264126",
+        "name": "Home Robots",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "dobot/r1",
+        "payload": "home_r1",
+        "payloadType": "str",
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "e2f5c34bc1846c13",
+                "c115cabfb74d149a"
+            ]
+        ]
+    },
+    {
+        "id": "e2f5c34bc1846c13",
+        "type": "mqtt out",
+        "z": "c34a7ab863264126",
+        "name": "dobot/r1",
+        "topic": "dobot/r1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ee45a4901ed1a5e",
+        "x": 320,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c115cabfb74d149a",
+        "type": "debug",
+        "z": "c34a7ab863264126",
+        "name": "debug 16",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "bfbdb7aa42333303",
+        "type": "mqtt in",
+        "z": "c34a7ab863264126",
+        "name": "",
+        "topic": "dobot/r1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "d2fb69f225e9f9a6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 480,
+        "y": 260,
+        "wires": [
+            [
+                "b2f4940c2d21c9ac",
+                "f95d5a66608761b0"
+            ]
+        ]
+    },
+    {
+        "id": "b2f4940c2d21c9ac",
+        "type": "debug",
+        "z": "c34a7ab863264126",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "b57645af93580e60",
+        "type": "mqtt out",
+        "z": "c34a7ab863264126",
+        "name": "",
+        "topic": "dobot/r2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ee45a4901ed1a5e",
+        "x": 880,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "f95d5a66608761b0",
+        "type": "change",
+        "z": "c34a7ab863264126",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "r1_is_home",
+                "fromt": "str",
+                "to": "home_r2_r3",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 260,
+        "wires": [
+            [
+                "b57645af93580e60",
+                "b30a788458bb6c69"
+            ]
+        ]
+    },
+    {
+        "id": "b30a788458bb6c69",
+        "type": "debug",
+        "z": "c34a7ab863264126",
+        "name": "debug 18",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "5620f3726001137b",
+        "type": "mqtt in",
+        "z": "c34a7ab863264126",
+        "name": "",
+        "topic": "dobot/r2",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "6ee45a4901ed1a5e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1040,
+        "y": 260,
+        "wires": [
+            [
+                "705a582c96ab7f94"
+            ]
+        ]
+    },
+    {
+        "id": "aacabe3648ae652c",
+        "type": "debug",
+        "z": "c34a7ab863264126",
+        "name": "debug 19",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1280,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "705a582c96ab7f94",
+        "type": "switch",
+        "z": "c34a7ab863264126",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "r2_r3_is_home",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1170,
+        "y": 260,
+        "wires": [
+            [
+                "aacabe3648ae652c"
+            ]
+        ]
+    },
+    {
+        "id": "ca0d141a703e5d4c",
+        "type": "inject",
+        "z": "c34a7ab863264126",
+        "name": "Start Process",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "dobot/process",
+        "payload": "load_p1",
+        "payloadType": "str",
+        "x": 130,
+        "y": 440,
+        "wires": [
+            [
+                "15e9ed23de4b46d4",
+                "9dd9883b1868a852"
+            ]
+        ]
+    },
+    {
+        "id": "15e9ed23de4b46d4",
+        "type": "mqtt out",
+        "z": "c34a7ab863264126",
+        "name": "",
+        "topic": "dobot/process",
+        "qos": "2",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ee45a4901ed1a5e",
+        "x": 320,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "9dd9883b1868a852",
+        "type": "debug",
+        "z": "c34a7ab863264126",
+        "name": "debug 20",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "58791c61d18566ae",
+        "type": "mqtt in",
+        "z": "c34a7ab863264126",
+        "name": "",
+        "topic": "dobot/process",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "6ee45a4901ed1a5e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 620,
+        "wires": [
+            [
+                "422373f5f27e14aa",
+                "851d77cef8518673"
+            ]
+        ]
+    },
+    {
+        "id": "422373f5f27e14aa",
+        "type": "debug",
+        "z": "c34a7ab863264126",
+        "name": "debug 23",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "851d77cef8518673",
+        "type": "switch",
+        "z": "c34a7ab863264126",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "p3_empty",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 350,
+        "y": 620,
+        "wires": [
+            [
+                "4d0fbd38fdfeb36a",
+                "43bec30787e5fc7d"
+            ]
+        ]
+    },
+    {
+        "id": "4d0fbd38fdfeb36a",
+        "type": "debug",
+        "z": "c34a7ab863264126",
+        "name": "debug 24",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "f63168064b17dd84",
+        "type": "mqtt out",
+        "z": "c34a7ab863264126",
+        "name": "",
+        "topic": "dobot/process",
+        "qos": "2",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ee45a4901ed1a5e",
+        "x": 860,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "43bec30787e5fc7d",
+        "type": "change",
+        "z": "c34a7ab863264126",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "p3_empty",
+                "fromt": "str",
+                "to": "start_sorting",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 620,
+        "wires": [
+            [
+                "f63168064b17dd84",
+                "9333d472cd037188"
+            ]
+        ]
+    },
+    {
+        "id": "9333d472cd037188",
+        "type": "debug",
+        "z": "c34a7ab863264126",
+        "name": "debug 25",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "6ee45a4901ed1a5e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d2fb69f225e9f9a6",
+        "type": "mqtt-broker",
+        "name": "Mosquitto",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    }
+]

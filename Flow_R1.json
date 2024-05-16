@@ -1,0 +1,863 @@
+[
+    {
+        "id": "63dd7fe4cc934564",
+        "type": "tab",
+        "label": "PA1_Senn_Aebli_R1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c5bf77f19ed95363",
+        "type": "mqtt in",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "topic": "dobot/r1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "6ee45a4901ed1a5e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 80,
+        "y": 120,
+        "wires": [
+            [
+                "a31fbd30b2c7b615"
+            ]
+        ]
+    },
+    {
+        "id": "a31fbd30b2c7b615",
+        "type": "switch",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "home_r1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 250,
+        "y": 120,
+        "wires": [
+            [
+                "1324bc72752ec52a",
+                "1438f3c765c331f2"
+            ]
+        ]
+    },
+    {
+        "id": "1438f3c765c331f2",
+        "type": "exec",
+        "z": "63dd7fe4cc934564",
+        "command": "python Desktop/PA1_DavidSenn_KaiAebli/Environment/home_R1.py",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Home R1",
+        "x": 520,
+        "y": 120,
+        "wires": [
+            [
+                "35b0420289b9a7a6",
+                "1ec2c8469bb67324"
+            ],
+            [
+                "35b0420289b9a7a6"
+            ],
+            [
+                "35b0420289b9a7a6"
+            ]
+        ]
+    },
+    {
+        "id": "35b0420289b9a7a6",
+        "type": "debug",
+        "z": "63dd7fe4cc934564",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "e4ae314f20968ed9",
+        "type": "mqtt out",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "topic": "dobot/r1",
+        "qos": "2",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ee45a4901ed1a5e",
+        "x": 1200,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "1324bc72752ec52a",
+        "type": "debug",
+        "z": "63dd7fe4cc934564",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "1ec2c8469bb67324",
+        "type": "switch",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "R3",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 770,
+        "y": 120,
+        "wires": [
+            [
+                "ca7d761c4c1ba5a6",
+                "780524db3ea00ebf"
+            ]
+        ]
+    },
+    {
+        "id": "ca7d761c4c1ba5a6",
+        "type": "change",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "r1_is_home",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 120,
+        "wires": [
+            [
+                "e4ae314f20968ed9",
+                "da76428ed34cadfa"
+            ]
+        ]
+    },
+    {
+        "id": "da76428ed34cadfa",
+        "type": "debug",
+        "z": "63dd7fe4cc934564",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1160,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "780524db3ea00ebf",
+        "type": "debug",
+        "z": "63dd7fe4cc934564",
+        "name": "debug 18",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "88db36ae7f812dfe",
+        "type": "mqtt in",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "topic": "dobot/process",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "6ee45a4901ed1a5e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 400,
+        "wires": [
+            [
+                "e601241e634215e2"
+            ]
+        ]
+    },
+    {
+        "id": "e601241e634215e2",
+        "type": "switch",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "load_p1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "p1_empty",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "p2_empty",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 310,
+        "y": 400,
+        "wires": [
+            [
+                "dda77cd42d8275cd",
+                "690ccbac796f6e4d"
+            ],
+            [
+                "cb9165b2eb36fd6d"
+            ],
+            [
+                "eb171581a793e5b6"
+            ]
+        ]
+    },
+    {
+        "id": "dda77cd42d8275cd",
+        "type": "exec",
+        "z": "63dd7fe4cc934564",
+        "command": "python Desktop/PA1_DavidSenn_KaiAebli/Environment/Bot1_pallet1.py",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Load P1",
+        "x": 510,
+        "y": 300,
+        "wires": [
+            [
+                "163d00fc61576f6c",
+                "616b203a23e1b2b9"
+            ],
+            [
+                "163d00fc61576f6c"
+            ],
+            [
+                "163d00fc61576f6c",
+                "f28aa426b0aff95c"
+            ]
+        ]
+    },
+    {
+        "id": "690ccbac796f6e4d",
+        "type": "debug",
+        "z": "63dd7fe4cc934564",
+        "name": "debug 19",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "163d00fc61576f6c",
+        "type": "debug",
+        "z": "63dd7fe4cc934564",
+        "name": "debug 20",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "616b203a23e1b2b9",
+        "type": "switch",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "Pallet 1 has been placed",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 750,
+        "y": 300,
+        "wires": [
+            [
+                "62ba9b78f2191e76",
+                "103fd0ca215a155b"
+            ]
+        ]
+    },
+    {
+        "id": "62ba9b78f2191e76",
+        "type": "change",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "p1_loaded",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 300,
+        "wires": [
+            [
+                "8541608c4e320f08",
+                "a8dcfabd770cc75c"
+            ]
+        ]
+    },
+    {
+        "id": "b74c74918b0b7271",
+        "type": "mqtt out",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "topic": "dobot/process",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ee45a4901ed1a5e",
+        "x": 1320,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "103fd0ca215a155b",
+        "type": "debug",
+        "z": "63dd7fe4cc934564",
+        "name": "debug 21",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "8541608c4e320f08",
+        "type": "debug",
+        "z": "63dd7fe4cc934564",
+        "name": "debug 22",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1100,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f28aa426b0aff95c",
+        "type": "debug",
+        "z": "63dd7fe4cc934564",
+        "name": "debug 23",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "cb9165b2eb36fd6d",
+        "type": "exec",
+        "z": "63dd7fe4cc934564",
+        "command": "python Desktop/PA1_DavidSenn_KaiAebli/Environment/Bot1_pallet2.py",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Load P2",
+        "x": 500,
+        "y": 400,
+        "wires": [
+            [
+                "fd472fc0f6de1b25",
+                "c362a1eaa981b0f4"
+            ],
+            [
+                "c362a1eaa981b0f4"
+            ],
+            [
+                "c362a1eaa981b0f4"
+            ]
+        ]
+    },
+    {
+        "id": "eb171581a793e5b6",
+        "type": "exec",
+        "z": "63dd7fe4cc934564",
+        "command": "python Desktop/PA1_DavidSenn_KaiAebli/Environment/Bot1_pallet3.py",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Load P3",
+        "x": 500,
+        "y": 540,
+        "wires": [
+            [
+                "1b517a22b5b8c7d8",
+                "86b76483a98a264c"
+            ],
+            [
+                "86b76483a98a264c"
+            ],
+            [
+                "86b76483a98a264c"
+            ]
+        ]
+    },
+    {
+        "id": "c362a1eaa981b0f4",
+        "type": "debug",
+        "z": "63dd7fe4cc934564",
+        "name": "debug 24",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "fd472fc0f6de1b25",
+        "type": "switch",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "Pallet 2 has been placed",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 730,
+        "y": 440,
+        "wires": [
+            [
+                "9fc58d3255216be2",
+                "43277b914934d4d6"
+            ]
+        ]
+    },
+    {
+        "id": "9fc58d3255216be2",
+        "type": "change",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "p2_loaded",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 440,
+        "wires": [
+            [
+                "38a521fc2a2463f2",
+                "b6ce6e3664470327"
+            ]
+        ]
+    },
+    {
+        "id": "29c9d30ab09d2145",
+        "type": "mqtt out",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "topic": "dobot/process",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ee45a4901ed1a5e",
+        "x": 1300,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "43277b914934d4d6",
+        "type": "debug",
+        "z": "63dd7fe4cc934564",
+        "name": "debug 25",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "38a521fc2a2463f2",
+        "type": "debug",
+        "z": "63dd7fe4cc934564",
+        "name": "debug 26",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "1b517a22b5b8c7d8",
+        "type": "switch",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "Pallet 3 has been placed",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 710,
+        "y": 600,
+        "wires": [
+            [
+                "4fe615ec39242dcb",
+                "35dddd40bea05125"
+            ]
+        ]
+    },
+    {
+        "id": "4fe615ec39242dcb",
+        "type": "change",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "p3_loaded",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 600,
+        "wires": [
+            [
+                "83a9e0ec0dcae106",
+                "1a8a4e9c1069860e"
+            ]
+        ]
+    },
+    {
+        "id": "f0fe0799bb500332",
+        "type": "mqtt out",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "topic": "dobot/process",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ee45a4901ed1a5e",
+        "x": 1320,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "35dddd40bea05125",
+        "type": "debug",
+        "z": "63dd7fe4cc934564",
+        "name": "debug 27",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "83a9e0ec0dcae106",
+        "type": "debug",
+        "z": "63dd7fe4cc934564",
+        "name": "debug 28",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "86b76483a98a264c",
+        "type": "debug",
+        "z": "63dd7fe4cc934564",
+        "name": "debug 29",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "a8dcfabd770cc75c",
+        "type": "delay",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1120,
+        "y": 300,
+        "wires": [
+            [
+                "b74c74918b0b7271"
+            ]
+        ]
+    },
+    {
+        "id": "b6ce6e3664470327",
+        "type": "delay",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1120,
+        "y": 440,
+        "wires": [
+            [
+                "29c9d30ab09d2145"
+            ]
+        ]
+    },
+    {
+        "id": "1a8a4e9c1069860e",
+        "type": "delay",
+        "z": "63dd7fe4cc934564",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1140,
+        "y": 600,
+        "wires": [
+            [
+                "f0fe0799bb500332"
+            ]
+        ]
+    },
+    {
+        "id": "6ee45a4901ed1a5e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
