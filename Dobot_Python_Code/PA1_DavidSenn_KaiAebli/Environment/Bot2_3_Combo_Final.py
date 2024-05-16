@@ -9,8 +9,8 @@ from pydobot.lib.interface import Interface
 # Initialize the Dobots and connect
 bot2 = Dobot()
 bot3 = Dobot()
-#bot2.port = get_coms_port()[1]
-#bot3.port = get_coms_port()[0]
+#bot2.port = get_coms_port()[0]
+#bot3.port = get_coms_port()[1]
 available_ports = list_ports.comports()
 print(f'available ports: {[x.device for x in available_ports]}')
 
