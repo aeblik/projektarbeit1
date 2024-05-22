@@ -1,6 +1,7 @@
 # AD22_DLP_Project1_Aebli_Senn
 Repository for the Project work 1 of the Digital Labs and Production track of the Applied Digital Life Sciences (ADLS) program at ZHAW
-The relevant code and the environment relevant for this project can be found in the folder "PA1_DavidSenn_KaiAebli"
+
+The relevant code and the environment relevant for this project can be found in the folder "PA1_DavidSenn_KaiAebli". The same environment is deployed in the Raspberry Pi 4 used in this project to control the Dobot Magician Robots
 ## Process Modeling and Implementation with Python, Node-RED and Raspberry Pi
 
 **Zusammenfassung**
