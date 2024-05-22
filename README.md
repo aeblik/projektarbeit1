@@ -1,7 +1,7 @@
 # AD22_DLP_Project1_Aebli_Senn
 Repository for the Project work 1 of the Digital Labs and Production track of the Applied Digital Life Sciences (ADLS) program at ZHAW
-## Process Modeling and Implementation with Python, Node-RED and Raspberry Pi
 The relevant code and the environment relevant for this project can be found in the folder "PA1_DavidSenn_KaiAebli"
+## Process Modeling and Implementation with Python, Node-RED and Raspberry Pi
 
 **Zusammenfassung**
 Dieses Projekt untersucht die Integration von Raspberry Pi (RPi) mit Dobot Magician Roboterar-men zur Prozessautomatisierung in einer Internet of Things (IoT) Umgebung unter Verwendung von Python und Node-RED. Das Ziel ist es, die Machbarkeit und die Vorteile der Kombination dieser Technologien zur Automatisierung eines Sortierprozesses zu demonstrieren. Das Projekt konzentriert sich auf drei Hauptbereiche: die Anwendung von RPi als Edge-Computing-Geräte, die Nutzbarkeit von Node-RED als No-Code-Entwicklungsumgebung und die effektive Steuerung der Dobot Magician Roboter durch Python-Skripte.
